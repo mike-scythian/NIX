@@ -41,7 +41,7 @@ public class AppTest
 
     }
     @Test
-    void tryIsWorkable(){
+    void shouldToWork(){
 
         assertThat(comp1.isWorkable()).isTrue();
         assertThat(comp2.isWorkable()).isTrue();
