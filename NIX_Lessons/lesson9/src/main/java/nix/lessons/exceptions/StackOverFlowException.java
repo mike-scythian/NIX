@@ -1,4 +1,4 @@
-package nix.lessons;
+package nix.lessons.exceptions;
 
 public class StackOverFlowException extends Exception{
 
