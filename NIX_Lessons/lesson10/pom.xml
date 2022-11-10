@@ -5,6 +5,18 @@
   <groupId>org.example</groupId>
   <artifactId>lesson10</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>14</source>
+          <target>14</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <packaging>jar</packaging>
 
   <name>lesson10</name>
@@ -13,6 +25,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit-version>5.9.1</junit-version>
+    <jupiter-params-version>5.9.1</jupiter-params-version>
+    <assertJ-version>3.23.1</assertJ-version>
   </properties>
 
   <dependencies>
@@ -23,5 +37,18 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${jupiter-params-version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertJ-version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>

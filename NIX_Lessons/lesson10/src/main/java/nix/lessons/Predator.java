@@ -1,9 +1,14 @@
-package org.example;
+package nix.lessons;
 
 public abstract class Predator {
 
     private String color;
     private int weight;
+
+    public Predator(String color, int weight) {
+        this.color = color;
+        this.weight = weight;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -14,6 +19,7 @@ public abstract class Predator {
         Predator predator = (Predator) o;
 
         if (weight != predator.weight) return false;
+
         return color != null ? color.equals(predator.color) : predator.color == null;
     }
 
@@ -24,7 +30,7 @@ public abstract class Predator {
         return result;
     }
 
-    protected abstract void toSleep();
+    protected abstract String toSleep();
     protected abstract String toHunt();
 
     public String getColor() {
