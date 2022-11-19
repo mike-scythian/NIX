@@ -1,8 +1,8 @@
 package nix.lessons.exceptions;
 
-public class StackOverFlowException extends Exception{
+public class StackOverFlowException extends Exception {
 
-    public StackOverFlowException (){
+    public StackOverFlowException() {
 
         super("Stack is full.");
     }
