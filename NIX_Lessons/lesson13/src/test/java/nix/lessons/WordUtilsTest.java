@@ -3,7 +3,7 @@ package nix.lessons;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
 import java.util.Map;
@@ -11,10 +11,10 @@ import java.util.Set;
 
 class WordUtilsTest {
 
-    private static String testString =  "Snow on the ground " +
-                                        "Snow on the tree " +
-                                        "Snow on the house " +
-                                        "Snow on me";
+    private static String testString = "Snow on the ground " +
+            "Snow on the tree " +
+            "Snow on the house " +
+            "Snow on me";
     private static List<String> testList;
     private static WordUtils wordUtils;
 
@@ -27,7 +27,9 @@ class WordUtilsTest {
     @Test
     void shouldFindShortesWord() {
 
-        assertEquals(Set.of("me", "on"), wordUtils.getShortestWord(testList), "Should be [me,on]");
+        assertThat(wordUtils.getShortestWord(testList))
+                .isNotEmpty()
+                .isEqualTo(Set.of("me", "on"));
     }
 
     @Test
@@ -42,6 +44,6 @@ class WordUtilsTest {
                 "house", 1,
                 "me", 1);
 
-        assertEquals(exceptedMap, wordUtils.wordCounter(testList));
+        assertThat(wordUtils.wordCounter(testList)).isEqualTo(exceptedMap);
     }
 }
