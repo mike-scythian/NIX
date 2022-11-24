@@ -9,18 +9,12 @@ public class NumberUtils {
 
     public Integer getSum(List<Integer> numbers) {
 
-        if (!Optional.ofNullable(numbers).isPresent())
-            return 0;
-
         return numbers.stream()
                 .reduce(Integer::sum)
                 .orElse(0);
     }
 
     public List<Integer> multiplyOddNumbers(List<Integer> numbers) {
-
-        if (!Optional.ofNullable(numbers).isPresent())
-            return Collections.emptyList();
 
         return numbers.stream()
                 .mapToInt(Integer::intValue)
