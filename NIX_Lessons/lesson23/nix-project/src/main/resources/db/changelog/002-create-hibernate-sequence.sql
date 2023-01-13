@@ -1,0 +1,1 @@
+CREATE SEQUENCE nix.hibernate_sequence START 1;
